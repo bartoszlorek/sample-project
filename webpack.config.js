@@ -3,16 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.ts',
+  entry: {
+    index: './src/index.ts',
+  },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
-  devServer: {
-    contentBase: path.resolve(__dirname, 'playground'),
-    // open: true,
-  },
-  devtool: 'eval-cheap-module-source-map',
   module: {
     rules: [
       {
@@ -25,5 +23,6 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '...'],
   },
+  devtool: 'eval-cheap-module-source-map',
   plugins: [new HtmlWebpackPlugin()],
 };

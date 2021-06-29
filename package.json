@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production --no-devtool"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
